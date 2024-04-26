@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 
 import authRoutes from './routes/auth.routes.js'
 import messageRoutes from './routes/message.routes.js'
+import userRoutes from './routes/user.routes.js'
 import connectToDB from './db/connectToDB.js';
 
 
@@ -19,6 +20,7 @@ dotenv.config()
 app.use(express.json())//to parse the incoming request with json payloads (from req.body)
 app.use('/api/auth',authRoutes)
 app.use('/api/messages',messageRoutes)
+app.use('/api/users',userRoutes)
 
 
 
