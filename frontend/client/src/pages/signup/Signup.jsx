@@ -29,8 +29,10 @@ const Signup = () => {
   return (
     <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
       <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
-        <h1 className="text-3xl font-semibold text-center text-gray-300">
-          Sign Up <span className="text-blue-500"> ChatApp</span>
+        <span className="text-blue-400 text-4xl font-semibold">Talks</span>
+
+        <h1 className="text-1xl font-semibold text-center text-gray-300 mt-5">
+          Sign Up
         </h1>
 
         <form onSubmit={handleSubmit}>
@@ -94,7 +96,10 @@ const Signup = () => {
             />
           </div>
 
-          <GenderCheckbox onCheckBoxChange={handleCheckBox} selectedGender={inputs.gender} />
+          <GenderCheckbox
+            onCheckBoxChange={handleCheckBox}
+            selectedGender={inputs.gender}
+          />
 
           <Link
             to="/login"
@@ -105,8 +110,15 @@ const Signup = () => {
           </Link>
 
           <div>
-            <button className="btn btn-block btn-sm mt-2 border border-slate-700" disabled={loading}>
-              {loading ? <span className='loading loading-spinner'></span>:'Signup'}
+            <button
+              className="btn btn-block btn-sm mt-2 border border-slate-700"
+              disabled={loading}
+            >
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Signup"
+              )}
             </button>
           </div>
         </form>
